@@ -32,12 +32,12 @@ app.get("/", function (req, res) {
  * Local Server Information
  * Values from .env (environment) file
  *************************/
-const port = process.env.PORT// el port number indica el puerto en el que se ejecuta el servidor
-const host = process.env.HOST// el host indica la direccion del servidor
+const port = process.env.PORT || 5500
+const host = process.env.HOST || '0.0.0.0'
 
 /* ***********************
  * Log statement to confirm server operation
  *************************/
-app.listen(port, () => {
+app.listen(port, host, () => {
   console.log(`app listening on ${host}:${port}`)
 })
