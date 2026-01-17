@@ -33,11 +33,11 @@ app.get("/", function (req, res) {
  * Values from .env (environment) file
  *************************/
 const port = process.env.PORT || 5500
-const host = process.env.HOST || '0.0.0.0'
+const host = '0.0.0.0' // Must be 0.0.0.0 for Render
 
 /* ***********************
  * Log statement to confirm server operation
  *************************/
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
 })
