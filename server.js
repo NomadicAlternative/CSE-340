@@ -10,7 +10,8 @@ const expressLayouts = require("express-ejs-layouts")// se importa el modulo exp
 const env = require("dotenv").config()// se importa el modulo dotenv para manejar variables de entorno desde un archivo .env
 const app = express()// se crea una instancia de express para configurar el servidor web
 const static = require("./routes/static")// se importa el archivo de rutas static.js para manejar archivos estaticos
-
+const baseController = require("./controllers/baseController")// se importa el controlador baseController.js para manejar rutas basicas
+const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
 /* ***********************
  * View Engine and Templates
  *************************/
@@ -24,9 +25,7 @@ app.set("layout", "./layouts/layout") // not at views root
 app.use(static)
 
 // Index Route es la ruta principal que se carga cuando se accede a la raiz del sitio web
-app.get("/", function (req, res) {
-  res.render("index", { title: "Home" })
-})
+app.get("/", baseController.buildHome)
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
