@@ -11,6 +11,7 @@ const env = require("dotenv").config()// se importa el modulo dotenv para maneja
 const app = express()// se crea una instancia de express para configurar el servidor web
 const static = require("./routes/static")// se importa el archivo de rutas static.js para manejar archivos estaticos
 const baseController = require("./controllers/baseController")// se importa el controlador baseController.js para manejar rutas basicas
+const inventoryRoute = require("./routes/inventoryRoute")// se importa el archivo de rutas inventoryRoute.js para manejar rutas de inventario
 const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
 /* ***********************
  * View Engine and Templates
@@ -26,6 +27,9 @@ app.use(static)
 
 // Index Route es la ruta principal que se carga cuando se accede a la raiz del sitio web
 app.get("/", baseController.buildHome)
+
+// Inventory routes
+app.use("/inv", inventoryRoute)
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
