@@ -12,6 +12,7 @@ const app = express()// se crea una instancia de express para configurar el serv
 const static = require("./routes/static")// se importa el archivo de rutas static.js para manejar archivos estaticos
 const baseController = require("./controllers/baseController")// se importa el controlador baseController.js para manejar rutas basicas
 const inventoryRoute = require("./routes/inventoryRoute")// se importa el archivo de rutas inventoryRoute.js para manejar rutas de inventario
+const accountRoute = require("./routes/accountRoute")// se importa el archivo de rutas accountRoute.js para manejar rutas de cuenta
 const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
 const session = require("express-session")// se importa el modulo express-session para manejar sesiones de usuario
 const pool = require('./database/') // se importa el modulo para manejar la conexion a la base de datos
@@ -56,6 +57,9 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 
 // Inventory routes
 app.use("/inv", inventoryRoute)
+
+// Account routes
+app.use("/account", accountRoute)
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {
