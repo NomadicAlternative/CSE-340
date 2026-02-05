@@ -13,6 +13,9 @@ const static = require("./routes/static")// se importa el archivo de rutas stati
 const baseController = require("./controllers/baseController")// se importa el controlador baseController.js para manejar rutas basicas
 const inventoryRoute = require("./routes/inventoryRoute")// se importa el archivo de rutas inventoryRoute.js para manejar rutas de inventario
 const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
+const session = require("express-session")// se importa
+const pool = require('./database/')//
+
 /* ***********************
  * View Engine and Templates
  *************************/
