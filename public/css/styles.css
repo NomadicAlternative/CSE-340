@@ -191,6 +191,38 @@ h1 {
   text-decoration: underline;
 }
 
+.account-register {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.register-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-help {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.toggle-password {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  background: transparent;
+  border: 1px solid #00bcd4;
+  color: #007bff;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.toggle-password:hover {
+  background-color: #e0f7fa;
+}
+
 /******* Hero Section ***************/
 .hero {
   position: relative;
@@ -459,6 +491,10 @@ footer {
 
   .form-group input {
     font-size: 0.95rem;
+  }
+
+  .form-help {
+    font-size: 0.85rem;
   }
 
   .hero-content h2 {
