@@ -15,6 +15,7 @@ const inventoryRoute = require("./routes/inventoryRoute")// se importa el archiv
 const accountRoute = require("./routes/accountRoute")// se importa el archivo de rutas accountRoute.js para manejar rutas de cuenta
 const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
 const session = require("express-session")// se importa el modulo express-session para manejar sesiones de usuario
+const bodyParser = require("body-parser")// se importa body-parser para leer datos del cuerpo de la solicitud
 const pool = require('./database/') // se importa el modulo para manejar la conexion a la base de datos
 
 /* ***********************
@@ -42,6 +43,9 @@ app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 app.set("view engine", "ejs")
 app.use(expressLayouts)
