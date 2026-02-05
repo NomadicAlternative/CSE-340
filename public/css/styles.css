@@ -104,6 +104,38 @@ h1 {
   color: #333;
 }
 
+/******* Flash Messages ***************/
+.messages {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.messages li {
+  padding: 0.75rem 1rem;
+  border-left: 4px solid #00bcd4;
+  background-color: #e0f7fa;
+  color: #004d60;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.messages li + li {
+  margin-top: 0.75rem;
+}
+
+.messages .notice {
+  border-left-color: #00bcd4;
+  background-color: #e0f7fa;
+  color: #004d60;
+}
+
+.messages .error {
+  border-left-color: #e53935;
+  background-color: #ffebee;
+  color: #7f1d1d;
+}
+
 /******* Hero Section ***************/
 .hero {
   position: relative;
@@ -355,6 +387,15 @@ footer {
 
   h1 {
     font-size: 1.5rem;
+  }
+
+  .messages {
+    margin-bottom: 1rem;
+  }
+
+  .messages li {
+    font-size: 0.95rem;
+    padding: 0.65rem 0.85rem;
   }
 
   .hero-content h2 {
