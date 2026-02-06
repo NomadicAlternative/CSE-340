@@ -111,6 +111,7 @@ h1 {
   list-style: none;
 }
 
+
 .messages li {
   padding: 0.75rem 1rem;
   border-left: 4px solid #00bcd4;
@@ -136,7 +137,7 @@ h1 {
   color: #7f1d1d;
 }
 
-/******* Account Login ***************/
+/******* Account Login **************/
 .account-login {
   display: flex;
   justify-content: center;
@@ -643,4 +644,120 @@ footer {
   .vehicle-title {
     font-size: 2rem;
   }
+}
+
+/******* Management View Styles ***************/
+.management-view {
+  max-width: 800px;
+}
+
+.management-view p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.management-links {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-left: 4px solid #00bcd4;
+  padding: 1.5rem;
+}
+
+.management-links h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.management-links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.management-links .btn-link {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.management-links .btn-link:hover {
+  background-color: #0097a7;
+  color: #fff;
+}
+
+/******* Add Classification & Inventory Styles ***************/
+.add-classification,
+.add-inventory {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.form-card.wide {
+  max-width: 600px;
+}
+
+.classification-form,
+.inventory-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-notice {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  color: #856404;
+  font-weight: 500;
+}
+
+.form-group select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.form-group select:focus {
+  outline: 2px solid #00bcd4;
+  border-color: #00bcd4;
+}
+
+.form-group textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group textarea:focus {
+  outline: 2px solid #00bcd4;
+  border-color: #00bcd4;
+}
+
+.required {
+  color: #e53935;
+}
+
+/******* Validation Errors ***************/
+.errors {
+  background-color: #ffebee;
+  border-left: 4px solid #e53935;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  list-style: disc inside;
+}
+
+.errors li {
+  color: #7f1d1d;
+  padding: 0.25rem 0;
 }
