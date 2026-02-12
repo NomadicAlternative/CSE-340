@@ -12,9 +12,11 @@
 
 <section class="edit-inventory">
   <div class="form-card wide">
-    <form class="inventory-form" method="post" action="/inv/update">
+    <form id="updateForm" class="inventory-form" method="post" action="/inv/update">
       
-      <input type="hidden" name="inv_id" value="<%= inv_id %>">
+      <input type="hidden" name="inv_id"
+      <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+      <% } %>>
 
       <div class="form-group">
         <label for="classification_id">Classification <span class="required">*</span></label>
@@ -126,8 +128,10 @@
         >
       </div>
 
-      <button class="btn-primary" type="submit">Update Vehicle</button>
+      <button class="btn-primary" type="submit" disabled>Update Vehicle</button>
     </form>
     <p class="form-footnote"><a href="/inv/">Back to Management</a></p>
   </div>
 </section>
+
+<script src="/js/inv-update.js"></script>

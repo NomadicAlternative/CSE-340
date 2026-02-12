@@ -292,6 +292,38 @@ h1 {
   color: #fff;
 }
 
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.delete-warning {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.delete-inventory input[readonly] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
