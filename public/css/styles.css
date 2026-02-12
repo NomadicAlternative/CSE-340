@@ -779,3 +779,106 @@ footer {
   color: #7f1d1d;
   padding: 0.25rem 0;
 }
+
+/******* Inventory Management Table ***************/
+#inventoryDisplay {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#inventoryDisplay thead {
+  background-color: #333;
+  color: #fff;
+}
+
+#inventoryDisplay thead tr th,
+#inventoryDisplay thead tr td {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+#inventoryDisplay th,
+#inventoryDisplay td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#inventoryDisplay tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#inventoryDisplay tbody tr:hover {
+  background-color: #e3f2fd;
+}
+
+#inventoryDisplay a {
+  color: #007bff;
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+#inventoryDisplay a:hover {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+#inventoryDisplay a[href*="delete"] {
+  color: #dc3545;
+}
+
+#inventoryDisplay a[href*="delete"]:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.management-view h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  border-bottom: 2px solid #00bcd4;
+  padding-bottom: 0.5rem;
+}
+
+.management-view > p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.management-view select {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  min-width: 250px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.management-view select:focus {
+  outline: none;
+  border-color: #00bcd4;
+  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.2);
+}
+
+.management-view noscript {
+  display: block;
+  padding: 1rem;
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 4px;
+  color: #856404;
+  margin-top: 1rem;
+}
