@@ -914,3 +914,81 @@ footer {
   color: #856404;
   margin-top: 1rem;
 }
+
+/* Account Management Styles */
+.account-management {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.account-management .content-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-management h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.account-management h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.account-management p {
+  margin-bottom: 0.5rem;
+}
+
+.account-management a {
+  color: #00bcd4;
+  text-decoration: underline;
+}
+
+.account-management a:hover {
+  color: #0097a7;
+}
+
+/* Account Update Styles */
+.account-update {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.account-update .form-card {
+  margin-bottom: 1.5rem;
+}
+
+.account-update h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.password-notice {
+  background-color: #e7f3ff;
+  border-left: 4px solid #00bcd4;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  color: #0c5460;
+  font-size: 0.9rem;
+}
+
+/* Header Tools Styles */
+#tools {
+  display: flex;
+  gap: 1rem;
+}
+
+#tools a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#tools a:hover {
+  text-decoration: underline;
+}
