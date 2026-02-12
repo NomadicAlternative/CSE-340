@@ -17,6 +17,7 @@ const utilities = require("./utilities/")// se importa el modulo utilities para 
 const session = require("express-session")// se importa el modulo express-session para manejar sesiones de usuario
 const bodyParser = require("body-parser")// se importa body-parser para leer datos del cuerpo de la solicitud
 const pool = require('./database/') // se importa el modulo para manejar la conexion a la base de datos
+const cookieParser = require("cookie-parser") // se importa cookie-parser para leer cookies
 
 /* ***********************
  * View Engine and Templates
@@ -46,6 +47,10 @@ app.use(function(req, res, next){
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(cookieParser())
+
+// Check JWT Token validity
+app.use(utilities.checkJWTToken)
 
 app.set("view engine", "ejs")
 app.use(expressLayouts)

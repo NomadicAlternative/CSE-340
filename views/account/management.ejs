@@ -1,0 +1,18 @@
+<h1><%= title %></h1>
+
+<%- messages() %>
+
+<% if (locals.errors) { %>
+<ul class="errors">
+  <% errors.forEach(error => { %>
+    <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>
+
+<section class="account-management">
+  <div class="content-card">
+    <h2>Welcome, <%= locals.accountData ? accountData.account_firstname : 'User' %></h2>
+    <p>You're logged in.</p>
+  </div>
+</section>
