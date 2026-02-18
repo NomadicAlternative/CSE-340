@@ -992,3 +992,192 @@ footer {
 #tools a:hover {
   text-decoration: underline;
 }
+
+/* =============================================
+   FAVORITES SYSTEM STYLES
+   ============================================= */
+
+/* Favorite Action Button Container */
+.favorite-action {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.favorite-form {
+  display: inline-block;
+}
+
+/* Favorite Buttons */
+.favorite-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favorite-add {
+  background-color: #fff;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+}
+
+.favorite-add:hover {
+  background-color: #e74c3c;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.favorite-remove {
+  background-color: #e74c3c;
+  color: #fff;
+  border: 2px solid #e74c3c;
+}
+
+.favorite-remove:hover {
+  background-color: #c0392b;
+  border-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Favorites Page Styles */
+.favorites-container {
+  padding: 1rem;
+}
+
+.favorites-count {
+  text-align: center;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Favorites Grid */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.favorite-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.favorite-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.favorite-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.favorite-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.favorite-info {
+  padding: 1rem;
+}
+
+.favorite-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.favorite-info .price {
+  color: #00bcd4;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.favorite-info .date-added {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+/* Remove from Favorites Button (in favorites list) */
+.remove-favorite-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.75rem;
+  background-color: #f8f9fa;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.remove-favorite-btn:hover {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+/* Empty Favorites Message */
+.no-favorites {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.no-favorites p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.no-favorites a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #00bcd4;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.no-favorites a:hover {
+  background-color: #0097a7;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Favorites */
+@media screen and (max-width: 768px) {
+  .favorites-grid {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+  
+  .favorite-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

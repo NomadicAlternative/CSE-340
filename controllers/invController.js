@@ -156,10 +156,20 @@ invCont.buildByInventoryId = async function (req, res, next) {
   const detailHTML = await utilities.buildVehicleDetail(data)
   let nav = await utilities.getNav()
   const vehicleName = data ? `${data.inv_year} ${data.inv_make} ${data.inv_model}` : "Vehicle Not Found"
+  
+  // Check if vehicle is in user's favorites (for logged in users)
+  let isFavorite = false
+  if (res.locals.loggedin && res.locals.accountData) {
+    const favoritesModel = require("../models/favorites-model")
+    isFavorite = await favoritesModel.checkFavorite(res.locals.accountData.account_id, inv_id)
+  }
+  
   res.render("./inventory/detail", {
     title: vehicleName,
     nav,
     detailHTML,
+    inv_id,
+    isFavorite,
   })
 }
 

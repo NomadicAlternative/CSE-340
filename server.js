@@ -13,6 +13,7 @@ const static = require("./routes/static")// se importa el archivo de rutas stati
 const baseController = require("./controllers/baseController")// se importa el controlador baseController.js para manejar rutas basicas
 const inventoryRoute = require("./routes/inventoryRoute")// se importa el archivo de rutas inventoryRoute.js para manejar rutas de inventario
 const accountRoute = require("./routes/accountRoute")// se importa el archivo de rutas accountRoute.js para manejar rutas de cuenta
+const favoritesRoute = require("./routes/favoritesRoute")// se importa el archivo de rutas favoritesRoute.js para manejar rutas de favoritos
 const utilities = require("./utilities/")// se importa el modulo utilities para funciones de utilidad
 const session = require("express-session")// se importa el modulo express-session para manejar sesiones de usuario
 const bodyParser = require("body-parser")// se importa body-parser para leer datos del cuerpo de la solicitud
@@ -69,6 +70,9 @@ app.use("/inv", inventoryRoute)
 
 // Account routes
 app.use("/account", accountRoute)
+
+// Favorites routes
+app.use("/favorites", favoritesRoute)
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

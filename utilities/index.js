@@ -114,6 +114,37 @@ Util.buildClassificationList = async function (classification_id = null) {
   return classificationList
 }
 
+/* **************************************
+* Build the favorites grid HTML
+* ************************************ */
+Util.buildFavoritesGrid = async function(data) {
+  let grid
+  if (data.length > 0) {
+    grid = '<ul class="favorites-grid">'
+    data.forEach(vehicle => {
+      grid += '<li class="favorite-item">'
+      grid += '<a href="/inv/detail/' + vehicle.inv_id + '" class="favorite-link">'
+      grid += '<img src="' + vehicle.inv_thumbnail + '" alt="' + vehicle.inv_make + ' ' + vehicle.inv_model + '">'
+      grid += '</a>'
+      grid += '<div class="favorite-info">'
+      grid += '<h3><a href="/inv/detail/' + vehicle.inv_id + '">' + vehicle.inv_year + ' ' + vehicle.inv_make + ' ' + vehicle.inv_model + '</a></h3>'
+      grid += '<p class="favorite-price">$' + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</p>'
+      grid += '<p class="favorite-miles">' + new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + ' miles</p>'
+      grid += '<p class="favorite-color">Color: ' + vehicle.inv_color + '</p>'
+      grid += '<form action="/favorites/remove" method="post" class="remove-favorite-form">'
+      grid += '<input type="hidden" name="inv_id" value="' + vehicle.inv_id + '">'
+      grid += '<button type="submit" class="btn-remove-favorite">❌ Remove from Favorites</button>'
+      grid += '</form>'
+      grid += '</div>'
+      grid += '</li>'
+    })
+    grid += '</ul>'
+  } else {
+    grid = '<p class="no-favorites">You have no favorites yet. <a href="/">Browse vehicles</a> to add some!</p>'
+  }
+  return grid
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 

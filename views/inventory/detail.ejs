@@ -8,5 +8,51 @@
 <%# Message Section %>
 <%# messages() %>
 
+<%# Favorites Button (only for logged in users) %>
+<% if (locals.loggedin) { %>
+<div class="favorite-action">
+  <% if (isFavorite) { %>
+    <form action="/favorites/remove" method="POST" class="favorite-form">
+      <input type="hidden" name="inv_id" value="<%= inv_id %>">
+      <input type="hidden" name="redirect" value="/inv/detail/<%= inv_id %>">
+      <button type="submit" class="favorite-btn favorite-remove">
+        ❤️ Remove from Favorites
+      </button>
+    </form>
+  <% } else { %>
+    <button type="button" class="favorite-btn favorite-add" id="addFavoriteBtn" data-inv-id="<%= inv_id %>">
+      🤍 Add to Favorites
+    </button>
+  <% } %>
+</div>
+<% } %>
+
 <%# Vehicle Detail Display Section %>
 <%- detailHTML %>
+
+<%# JavaScript for AJAX favorite toggle %>
+<% if (locals.loggedin && !isFavorite) { %>
+<script>
+document.getElementById('addFavoriteBtn').addEventListener('click', async function() {
+  const invId = this.getAttribute('data-inv-id');
+  try {
+    const response = await fetch(`/favorites/add/${invId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    if (data.success) {
+      // Reload page to show updated button
+      window.location.reload();
+    } else {
+      alert(data.message || 'Error adding to favorites');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error adding to favorites');
+  }
+});
+</script>
+<% } %>

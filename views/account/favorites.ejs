@@ -1,0 +1,23 @@
+<h1><%= title %></h1>
+
+<%- messages() %>
+
+<% if (locals.errors) { %>
+<ul class="errors">
+  <% errors.forEach(error => { %>
+    <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %>
+
+<section class="favorites-section">
+  <div class="favorites-header">
+    <p class="favorites-count">You have <strong><%= favoritesCount %></strong> favorite<%= favoritesCount !== 1 ? 's' : '' %></p>
+  </div>
+  
+  <%- favoritesGrid %>
+  
+  <p class="favorites-footer">
+    <a href="/account/" class="btn-back">← Back to Account Management</a>
+  </p>
+</section>

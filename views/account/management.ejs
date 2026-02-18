@@ -16,6 +16,9 @@
     
     <p><a href="/account/update/<%= locals.accountData ? accountData.account_id : '' %>">Update Account Information</a></p>
     
+    <h3>My Favorites</h3>
+    <p><a href="/favorites/">View My Favorite Vehicles</a></p>
+    
     <% if (locals.accountData && (accountData.account_type === "Employee" || accountData.account_type === "Admin")) { %>
       <h3>Inventory Management</h3>
       <p><a href="/inv/">Manage Inventory</a></p>
